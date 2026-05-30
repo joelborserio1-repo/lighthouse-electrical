@@ -1,6 +1,8 @@
 import localFont from "next/font/local";
 import "./globals.css";
 import "./components.css";
+import ScrollProgress from "@/components/ScrollProgress";
+import StructuredData from "@/components/StructuredData";
 
 // Close-match brand fonts, bundled locally (the container blocks Google Fonts,
 // and local fonts keep the build network-independent). Outfit ≈ Sora/Poppins
@@ -25,6 +27,7 @@ const inter = localFont({
 
 export const metadata = {
   metadataBase: new URL("https://lighthouse.jtbassetgroup.com"),
+  manifest: "/manifest.webmanifest",
   title: "Lighthouse Electrical — Reliable Electrical Done Properly | Newcastle",
   description:
     "Premium electrical, solar and battery solutions across residential and commercial projects. Newcastle's trusted electricians, serving the Hunter region. Get a free quote.",
@@ -58,7 +61,9 @@ export default function RootLayout({ children }) {
         <a href="#main" className="skip-link">
           Skip to content
         </a>
+        <ScrollProgress />
         {children}
+        <StructuredData />
       </body>
     </html>
   );

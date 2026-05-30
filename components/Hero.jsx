@@ -4,6 +4,7 @@ import { motion, useReducedMotion } from "motion/react";
 import { staggerContainer, riseItem, riseItemReduced, spring } from "@/lib/motion";
 import CurrentMotif from "./CurrentMotif";
 import MagneticButton from "./motion/MagneticButton";
+import Parallax from "./motion/Parallax";
 
 export default function Hero() {
   const reduce = useReducedMotion();
@@ -15,7 +16,9 @@ export default function Hero() {
       <div className="hero__bg" aria-hidden="true" />
       <div className="hero__overlay" aria-hidden="true" />
       <div className="hero__motif" aria-hidden="true">
-        <CurrentMotif />
+        <Parallax distance={50}>
+          <CurrentMotif />
+        </Parallax>
       </div>
 
       <div className="container hero__inner">

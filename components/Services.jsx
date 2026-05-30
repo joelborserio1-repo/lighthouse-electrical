@@ -2,6 +2,7 @@
 
 import Reveal from "./motion/Reveal";
 import Stagger from "./motion/Stagger";
+import TiltCard from "./motion/TiltCard";
 import {
   SolarIcon,
   BatteryIcon,
@@ -59,12 +60,14 @@ export default function Services() {
 
         <Stagger className="services__grid" stagger={0.07}>
           {SERVICES.map(({ Icon, title, body }) => (
-            <Stagger.Item key={title} className="card svc-card">
-              <span className="svc-card__icon" aria-hidden="true">
-                <Icon width={22} height={22} />
-              </span>
-              <h3 className="svc-card__title">{title}</h3>
-              <p className="svc-card__body">{body}</p>
+            <Stagger.Item key={title}>
+              <TiltCard className="card svc-card">
+                <span className="svc-card__icon" aria-hidden="true">
+                  <Icon width={22} height={22} />
+                </span>
+                <h3 className="svc-card__title">{title}</h3>
+                <p className="svc-card__body">{body}</p>
+              </TiltCard>
             </Stagger.Item>
           ))}
         </Stagger>

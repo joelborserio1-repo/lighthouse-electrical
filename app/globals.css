@@ -13,6 +13,10 @@
   --gold: #e0a43a; /* estimated — confirm exact */
   --gold-600: #c98f29; /* hover/active */
   --gold-on: #0e2238; /* navy text on gold */
+  /* Deeper gold for small text on LIGHT backgrounds — derived from --gold to
+     meet WCAG AA (bright gold fails contrast at small sizes on cream/white).
+     Bright --gold remains everywhere else. Flagged for brand approval. */
+  --gold-text: #a8761a;
 
   /* Surfaces */
   --bg: #ffffff;
@@ -143,7 +147,7 @@ button {
   font-size: 0.8125rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--gold-text); /* AA-safe on light section backgrounds */
   margin: 0 0 var(--space-4);
 }
 

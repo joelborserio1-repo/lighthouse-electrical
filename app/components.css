@@ -4,6 +4,37 @@
    reserved on media to keep CLS ~0.
    ============================================================ */
 
+/* ---------- SCROLL PROGRESS ---------- */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gold);
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+  z-index: calc(var(--z-nav) + 1);
+}
+
+/* ---------- TILT CARD ---------- */
+.svc-card {
+  position: relative;
+  transform-style: preserve-3d;
+  overflow: hidden;
+}
+.tilt-glare {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity var(--dur) var(--ease-out);
+}
+.svc-card:hover .tilt-glare {
+  opacity: 1;
+}
+
 /* ---------- NAV ---------- */
 .nav {
   position: fixed;
@@ -353,6 +384,12 @@
 }
 .why__eyebrow {
   text-align: center;
+  color: var(--gold); /* bright gold is AA-compliant on navy */
+}
+
+/* Contact eyebrow sits on a dark panel — bright gold passes here too */
+.contact .eyebrow {
+  color: var(--gold);
 }
 .why__title {
   color: var(--text-inv);
